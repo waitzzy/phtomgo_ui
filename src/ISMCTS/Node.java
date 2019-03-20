@@ -24,10 +24,10 @@ public class Node{
 
 	}
 
-	public Node(){
+	public Node(String player){
 		this.action = null;
 		this.parent = null;
-		this.Player = "2";
+		this.Player = player;
 		this.wins = 0;
 		this.visits = 0;
 		this.avails = 1;
@@ -39,7 +39,7 @@ public class Node{
 		ArrayList<Action> TriedMove = new ArrayList<Action>();
 		ArrayList<Action> result = new ArrayList<Action>();
  		if(visits!=0) {
-			System.out.println("getaction finish");
+			//System.out.println("getaction finish");
 			for (Node child : children) {
 				TriedMove.add(child.action);
 			}

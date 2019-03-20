@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f729a7c7-43bf-4e6e-8876-17ee268474fe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Game/TakeChess.java" afterDir="false" />
+    <list default="true" id="66afcceb-14dd-49a1-bc2f-b95588fe7f3c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phtomgo_ui/Game/Judger.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phtomgo_ui/Game/Judger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phtomgo_ui/ISMCTS/ISMCTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phtomgo_ui/ISMCTS/ISMCTS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phtomgo_ui/ISMCTS/InformationSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phtomgo_ui/ISMCTS/InformationSet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phtomgo_ui/ISMCTS/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phtomgo_ui/ISMCTS/Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phtomgo_ui/ISMCTS/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phtomgo_ui/ISMCTS/State.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phtomgo_ui/UI/GameStart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phtomgo_ui/UI/GameStart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phtomgo_ui/bot/ISMCTbot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phtomgo_ui/bot/ISMCTbot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phtomgo_ui.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Judger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Judger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ISMCTS/ISMCTS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ISMCTS/ISMCTS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ISMCTS/InformationSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ISMCTS/InformationSet.java" afterDir="false" />
@@ -10,7 +20,6 @@
       <change beforePath="$PROJECT_DIR$/src/ISMCTS/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ISMCTS/State.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/GameStart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/GameStart.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bot/ISMCTbot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bot/ISMCTbot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bot/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bot/Player.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,33 +32,31 @@
     <session id="-883532586">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
-          <entry key="project.open.time.0" value="2" />
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="32" />
+          <entry key="java" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="32" />
+          <entry key="JAVA" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="3692" />
-          <entry key="txt" value="6" />
+          <entry key="java" value="525" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3692" />
-          <entry key="PLAIN_TEXT" value="6" />
+          <entry key="JAVA" value="525" />
         </counts>
       </usages-collector>
     </session>
@@ -59,23 +66,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Game/Judger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="42" lean-forward="true" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="339">
+              <caret line="395" column="13" selection-start-line="395" selection-start-column="13" selection-end-line="395" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/UI/GameStart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="152" column="54" lean-forward="true" selection-start-line="152" selection-start-column="54" selection-end-line="152" selection-end-column="54" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="155">
+              <caret line="301" column="24" selection-start-line="301" selection-start-column="24" selection-end-line="301" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -83,8 +84,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bot/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+            <state relative-caret-position="180">
+              <caret line="12" column="10" lean-forward="true" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -95,49 +96,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ISMCTS/State.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1810">
-              <caret line="141" column="5" lean-forward="true" selection-start-line="141" selection-start-column="5" selection-end-line="141" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Game/TakeChess.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2855">
-              <caret line="218" column="32" selection-start-line="218" selection-start-column="32" selection-end-line="218" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1673#1674#0" expanded="true" />
-                <element signature="e#1715#1716#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ISMCTS/ISMCTS.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1232">
-              <caret line="92" column="9" lean-forward="true" selection-start-line="92" selection-start-column="9" selection-end-line="92" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ISMCTS/Node.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="592">
-              <caret line="54" column="22" lean-forward="true" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="15">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -145,24 +105,37 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bot/ISMCTbot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="330">
+              <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ISMCTS/Node.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="636">
+              <caret line="82" column="25" selection-start-line="82" selection-start-column="25" selection-end-line="82" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ISMCTS/ISMCTS.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1545">
+              <caret line="110" column="79" selection-start-line="110" selection-start-column="79" selection-end-line="110" selection-end-column="79" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ISMCTS/InformationSet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="21" column="58" lean-forward="true" selection-start-line="21" selection-start-column="58" selection-end-line="21" selection-end-column="58" />
+            <state relative-caret-position="45">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1595#1596#0" expanded="true" />
-                <element signature="e#1628#1629#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -170,17 +143,9 @@
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Sys</find>
-      <find>Syst</find>
+      <find>chec</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -189,21 +154,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/UI/Chess.java" />
-        <option value="$PROJECT_DIR$/src/ISMCTS/Persistence.java" />
-        <option value="$PROJECT_DIR$/src/UI/ChessUI.java" />
-        <option value="$PROJECT_DIR$/src/Game/Chess.java" />
-        <option value="$PROJECT_DIR$/src/bot/player.java" />
-        <option value="$PROJECT_DIR$/src/Game/ChessBoard.java" />
-        <option value="$PROJECT_DIR$/src/Game/Judger.java" />
-        <option value="$PROJECT_DIR$/src/Game/TakeChess.java" />
-        <option value="$PROJECT_DIR$/src/ISMCTS/Node.java" />
         <option value="$PROJECT_DIR$/src/ISMCTS/ISMCTS.java" />
-        <option value="$PROJECT_DIR$/src/ISMCTS/State.java" />
+        <option value="$PROJECT_DIR$/src/ISMCTS/Node.java" />
         <option value="$PROJECT_DIR$/src/bot/ISMCTbot.java" />
-        <option value="$PROJECT_DIR$/src/bot/Player.java" />
+        <option value="$PROJECT_DIR$/src/Game/Judger.java" />
         <option value="$PROJECT_DIR$/src/UI/GameStart.java" />
-        <option value="$PROJECT_DIR$/src/ISMCTS/InformationSet.java" />
       </list>
     </option>
   </component>
@@ -218,12 +173,13 @@
     <option name="width" value="1440" />
     <option name="height" value="808" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -240,32 +196,32 @@
               <item name="phtomgo_ui" type="b2602c69:ProjectViewProjectNode" />
               <item name="phtomgo_ui" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="bot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="phtomgo_ui" type="b2602c69:ProjectViewProjectNode" />
+              <item name="phtomgo_ui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Game" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="phtomgo_ui" type="b2602c69:ProjectViewProjectNode" />
+              <item name="phtomgo_ui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ISMCTS" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553057346461" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553076808425" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -279,33 +235,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.GameStart">
-    <configuration name="Chess" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="UI.Chess" />
-      <module name="phtomgo_ui" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="UI.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ChessUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="UI.ChessUI" />
-      <module name="phtomgo_ui" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="UI.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="GameStart" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="UI.GameStart" />
       <module name="phtomgo_ui" />
@@ -319,16 +249,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Application.Chess" />
-      <item itemvalue="Application.ChessUI" />
-      <item itemvalue="Application.GameStart" />
-    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.GameStart" />
-        <item itemvalue="Application.ChessUI" />
-        <item itemvalue="Application.Chess" />
       </list>
     </recent_temporary>
   </component>
@@ -337,35 +260,26 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f729a7c7-43bf-4e6e-8876-17ee268474fe" name="Default Changelist" comment="" />
-      <created>1552895231156</created>
+      <changelist id="66afcceb-14dd-49a1-bc2f-b95588fe7f3c" name="Default Changelist" comment="" />
+      <created>1553073611918</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1552895231156</updated>
-      <workItem from="1552895232371" duration="385000" />
-      <workItem from="1552895938782" duration="9349000" />
-      <workItem from="1552970200773" duration="5308000" />
-      <workItem from="1552977101412" duration="211000" />
-      <workItem from="1552985989498" duration="9183000" />
-      <workItem from="1553053350450" duration="2666000" />
+      <updated>1553073611918</updated>
+      <workItem from="1553073613201" duration="2870000" />
+      <workItem from="1553080566863" duration="2413000" />
+      <workItem from="1553083469410" duration="166000" />
+      <workItem from="1553083966596" duration="252000" />
     </task>
-    <task id="LOCAL-00001" summary="fuckGo">
-      <created>1552976452571</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1552976452571</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27102000" />
+    <option name="totallyTimeSpent" value="5701000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="808" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15808298" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1416309" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -373,17 +287,17 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.38915664" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.20810056" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3575419" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.31084338" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32960895" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -394,36 +308,6 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25679544" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.38915664" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.25421688" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.044578314" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Database" order="5" />
-      <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Maven Projects" order="8" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -431,122 +315,39 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="fuckGo" />
-    <option name="LAST_COMMIT_MESSAGE" value="fuckGo" />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ISMCTS/prob_form.java">
+    <entry file="file://$PROJECT_DIR$/src/ISMCTS/State.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/Coord.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/ChessUI.java">
+    <entry file="file://$PROJECT_DIR$/src/bot/ISMCTbot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3009">
-          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ISMCTS/Persistence.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="56" column="10" selection-start-line="56" selection-start-column="10" selection-end-line="56" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/Chess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/ChessBoard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1083">
-          <caret line="60" column="25" lean-forward="true" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/NumberFormatException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ISMCTS/Action.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Integer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="651" selection-start-line="651" selection-end-line="651" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/TakeChess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2855">
-          <caret line="218" column="32" selection-start-line="218" selection-start-column="32" selection-end-line="218" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1673#1674#0" expanded="true" />
-            <element signature="e#1715#1716#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ISMCTS/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="54" column="22" lean-forward="true" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="330">
+          <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ISMCTS/ISMCTS.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1232">
-          <caret line="92" column="9" lean-forward="true" selection-start-line="92" selection-start-column="9" selection-end-line="92" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="1545">
+          <caret line="110" column="79" selection-start-line="110" selection-start-column="79" selection-end-line="110" selection-end-column="79" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/Judger.java">
+    <entry file="file://$PROJECT_DIR$/src/ISMCTS/Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="42" lean-forward="true" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="636">
+          <caret line="82" column="25" selection-start-line="82" selection-start-column="25" selection-end-line="82" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ISMCTS/State.java">
+    <entry file="file://$PROJECT_DIR$/src/ISMCTS/InformationSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1810">
-          <caret line="141" column="5" lean-forward="true" selection-start-line="141" selection-start-column="5" selection-end-line="141" selection-end-column="5" />
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -555,43 +356,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bot/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+        <state relative-caret-position="180">
+          <caret line="12" column="10" lean-forward="true" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/Judger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="395" column="13" selection-start-line="395" selection-start-column="13" selection-end-line="395" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/GameStart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="152" column="54" lean-forward="true" selection-start-line="152" selection-start-column="54" selection-end-line="152" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bot/ISMCTbot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ISMCTS/InformationSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="21" column="58" lean-forward="true" selection-start-line="21" selection-start-column="58" selection-end-line="21" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1595#1596#0" expanded="true" />
-            <element signature="e#1628#1629#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="155">
+          <caret line="301" column="24" selection-start-line="301" selection-start-column="24" selection-end-line="301" selection-end-column="24" />
         </state>
       </provider>
     </entry>

@@ -13,41 +13,57 @@ import java.lang.*;
 public class ISMCTbot {
     public InformationSet set;
     public ISMCTS ismct ;
-    private char player;
+    private String player;
 
-    ISMCTbot(InformationSet set, char player) {
+    ISMCTbot(InformationSet set, String player) {
         this.set = set;
         this.player = player;
     }
 
-    public ISMCTbot(){
-        set = new InformationSet();
+    public ISMCTbot(String player){
+        set = new InformationSet(player);
+        this.player = player;
+        this.ismct = new ISMCTS(this.player);
 
     }
 
-    public String bot_run() {
-        Node rootnode = new Node();
+    public String bot_run(int itermax) {
+        Node rootnode = new Node(player);
         String ISMCTSoot="bang";
-        State state = set.SampleState();
-        ismct = new ISMCTS(rootnode, 200, state);
-        System.out.println("新建树成功");
-        Action action = ismct.Run();
+        ismct = new ISMCTS(rootnode, itermax);
+        for(int kk=0;kk<5;kk++) {   //状态数
+            State state = set.SampleState();
+            if(state.getActions().size()<1)
+            {
+                ISMCTSoot = "pass";
+                return ISMCTSoot;
+            }
+            //System.out.println("新建树成功");
+            ismct.Run(state);
+        }
+        Action action = ismct.GetAction();
         ISMCTSoot = action.x+","+action.y;
         return ISMCTSoot;
     }
 
     public boolean obtainHunterJF(String hunterFeedback, int xx, int yy){  //裁判的反馈，合法，非法，提子
-        boolean flagHunter = true;
+        boolean flag = true;
         if(hunterFeedback.equals("take")){
-            flagHunter = false;
+            flag = false;
         }else if(hunterFeedback.equals("illegal"))
         { //得知非法，已知对应坐标为0，则断定是对方地盘（棋子或眼），计入矩阵
-             set.knownList[xx][yy] = "1";
+            String opponentplay;
+            if(this.player=="1"){
+                opponentplay = "2";
+            }
+            else
+                opponentplay = "1";
+             set.knownList[xx][yy] = opponentplay;
         }else if(hunterFeedback.equals("legal")){ //如果合法，将己方落子计入矩阵
-            set.knownList[xx][yy] = "2";
-            flagHunter = false;
+            set.knownList[xx][yy] = this.player;
+            flag = false;
         }
-        return flagHunter;
+        return flag;
     }
 
     public void killTake(ArrayList deadList){

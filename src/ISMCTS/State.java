@@ -19,10 +19,11 @@ public class State {
 			{"3", "0", "0", "0", "0", "0", "0", "0", "0", "0", "3"},
 			{"3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3"}
 	};
-	public String player = "2";
+	public String player;
 
-	State(String[][] board) {
+	State(String[][] board,String player) {
 		this.board = board;
+		this.player = player;
 
 	}
 	public void clone(State other){
@@ -31,9 +32,9 @@ public class State {
 				this.board[i][j] = other.board[i][j];
 			}
 		}
+		this.player = other.player;
 	}
 	public State(){
-
 	}
 
 	public ArrayList<Action> getActions() {
@@ -56,14 +57,11 @@ public class State {
 	}
 
 	public Action DoAction(Action action) {
-		String nowplayer="hunter";
 		if(player=="2"){
-			nowplayer ="hunter";
 			this.board[action.x][action.y] = "2";
 			this.player ="1";
 		}
 		else if(player=="1"){
-			nowplayer ="player";
 			this.board[action.x][action.y] = "1";
 			this.player ="2";
 		}
