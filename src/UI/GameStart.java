@@ -24,12 +24,14 @@ public class GameStart {
     boolean flagPlayer = true;
     boolean flagbot = true;
 
-    public static String inputSoot = null; //双方落子坐标
+    public String inputSoot = null; //双方落子坐标
     String ISMCTSoot = null;
     public static int playerWin = 0;
     public static int hunterWin = 0;
 
-
+    GameStart(){
+        GameStart.count=0;
+    }
 
     public void forestHunting() {  //游戏过程
         /*

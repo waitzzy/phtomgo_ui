@@ -387,13 +387,13 @@ public class Judger {
             }
         }
         if(hunterScale > playerScale){
-           // System.out.printf("Hunter is win! Player's scale is %d, Hunter's scale is %d ", playerScale,hunterScale );
+            System.out.println("Hunter is win! Player's scale is"+playerScale +","+ "Hunter's scale is "+hunterScale);
             whowin = "hunter";
         }else if(hunterScale < playerScale){
-            //System.out.printf("Player is win! Player's scale is %d, Hunter's scale is %d ", playerScale,hunterScale);
+            System.out.println("Player is win!  Player's scale is"+playerScale +","+ "Hunter's scale is "+hunterScale);
             whowin = "player";
         }if(hunterScale == playerScale){
-           // System.out.printf("Tt is even! Player's scale is %d, Hunter's scale is %d ", hunterScale, playerScale);
+            System.out.println("Tt is even!  Player's scale is"+playerScale +","+ "Hunter's scale is "+hunterScale);
             whowin = "none";
         }
         if(debug == 1){
