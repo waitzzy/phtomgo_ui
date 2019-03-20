@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import Game.ChessBoard;
 import Game.Coord;
 import ISMCTS.Action;
-
 public class State {
 	public String[][] board = {
 			{"3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3"},
@@ -20,12 +19,21 @@ public class State {
 			{"3", "0", "0", "0", "0", "0", "0", "0", "0", "0", "3"},
 			{"3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3"}
 	};
-	public char player = '2';
+	public String player = "2";
 
 	State(String[][] board) {
 		this.board = board;
+
+	}
+	public void clone(State other){
+		for(int i =0;i<=10;i++){
+			for(int j=0;j<=10;j++){
+				this.board[i][j] = other.board[i][j];
+			}
+		}
 	}
 	public State(){
+
 	}
 
 	public ArrayList<Action> getActions() {
@@ -47,9 +55,25 @@ public class State {
 		return state;
 	}
 
-	public void DoAction(Action action) {
-		this.board[action.x + 1][action.y + 1] = "2";
+	public Action DoAction(Action action) {
+		String nowplayer="hunter";
+		if(player=="2"){
+			nowplayer ="hunter";
+			this.board[action.x][action.y] = "2";
+			this.player ="1";
+		}
+		else if(player=="1"){
+			nowplayer ="player";
+			this.board[action.x][action.y] = "1";
+			this.player ="2";
+		}
+
+
+		Action nextaction = new Action(action.x,action.y);
+		return nextaction;
 	}
+
+
 
 	//得到结果
 	public int GetResult(char player) {
@@ -116,6 +140,9 @@ public class State {
 		}
 		return false;
 	}
+
+
+
 }
 
 

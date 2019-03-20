@@ -27,7 +27,7 @@ public class Player extends JPanel{
         String inputSoot="pass";//取得玩家输入
         boolean flag = true;
         for(int i=1;i<=9;i++){
-            for(int j = 0;j<=9;j++){
+            for(int j =1;j<=9;j++){
                 if(PlayerStatus[i][j]=="0")
                     flag=false;
             }
@@ -38,7 +38,7 @@ public class Player extends JPanel{
             int x = in.nextInt();
             int y = in.nextInt();
             inputSoot = x+","+y;
-            System.out.printf("你选择下在"+ x + "和"+y+"/n");
+            System.out.println("你选择下在"+ x + "和"+y);
         }
         //GameStart.inputFlag = true;
         return inputSoot;

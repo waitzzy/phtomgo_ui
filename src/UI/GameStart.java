@@ -150,7 +150,7 @@ public class GameStart {
                 inputFlag = false;
                 TextInput = true;
                 System.out.print(count + " Please input your soot:");
-                newPlayer.getPlayerSoot();
+                inputSoot = newPlayer.getPlayerSoot();
                 if ("pass".equals(inputSoot)) {
                 } else if (inputSoot.length() == 3 && java.lang.Character.isDigit(inputSoot.charAt(0))
                         && java.lang.Character.isDigit(inputSoot.charAt(2))

@@ -27,18 +27,12 @@ public class ISMCTbot {
 
     public String bot_run() {
         Node rootnode = new Node();
-        State state = set.SampleState();
         String ISMCTSoot="bang";
-        while (state.getActions().size() > 0) {
-            ismct = new ISMCTS(rootnode, 1000, state);
-            Action action = ismct.Run();
-            if(action.x==999){
-                ISMCTSoot = "pass";
-                break;
-            }
-            ISMCTSoot = action.x+","+action.y;
-            state.DoAction(action);
-        }
+        State state = set.SampleState();
+        ismct = new ISMCTS(rootnode, 200, state);
+        System.out.println("新建树成功");
+        Action action = ismct.Run();
+        ISMCTSoot = action.x+","+action.y;
         return ISMCTSoot;
     }
 
@@ -48,8 +42,9 @@ public class ISMCTbot {
             flagHunter = false;
         }else if(hunterFeedback.equals("illegal"))
         { //得知非法，已知对应坐标为0，则断定是对方地盘（棋子或眼），计入矩阵
-
+             set.knownList[xx][yy] = "1";
         }else if(hunterFeedback.equals("legal")){ //如果合法，将己方落子计入矩阵
+            set.knownList[xx][yy] = "2";
             flagHunter = false;
         }
         return flagHunter;

@@ -11,9 +11,9 @@ public class Node{
 	private int wins;
 	public int visits;
 	private int avails;
-	private char Player;
+	private String Player;
 
-	public Node(Action action,Node parent,char Player){
+	public Node(Action action,Node parent,String Player){
 		this.action = action;
 		this.parent = parent;
 		this.Player = Player;
@@ -27,7 +27,7 @@ public class Node{
 	public Node(){
 		this.action = null;
 		this.parent = null;
-		this.Player = '2';
+		this.Player = "2";
 		this.wins = 0;
 		this.visits = 0;
 		this.avails = 1;
@@ -39,6 +39,7 @@ public class Node{
 		ArrayList<Action> TriedMove = new ArrayList<Action>();
 		ArrayList<Action> result = new ArrayList<Action>();
  		if(visits!=0) {
+			System.out.println("getaction finish");
 			for (Node child : children) {
 				TriedMove.add(child.action);
 			}
@@ -76,7 +77,7 @@ public class Node{
 		return bestchild;
 	}
 
-	public Node Addchild(Action action,char Player){
+	public Node Addchild(Action action,String Player){
 		Node new_Child = new Node(action,this ,Player);
 		this.children.add(new_Child);
 		return new_Child;

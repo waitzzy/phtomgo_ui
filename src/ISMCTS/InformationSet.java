@@ -45,7 +45,9 @@ public class InformationSet {
 		this.knownList = knownList;
 		this.random = new Random();
 	}
-	public InformationSet(){}
+	public InformationSet(){
+		this.random = new Random();
+	}
 	/*
 	public boolean equals(InformationSet other){
 		if (other.forbiddenList.equals(this.forbiddenList)&&other.knownList.equals(this.knownList))
