@@ -307,7 +307,7 @@ public class GameStart {
             newGameStart = new GameStart();
             newGameStart.forestHunting();
         }
-        String result = "最终获胜\nhunter获胜次数: " + GameStart.hunterWin
+        String result = "成了！\n最终获胜\nhunter获胜次数: " + GameStart.hunterWin
                 + "\nplayer获胜次数: \n" + GameStart.playerWin;
         FileUtils.writeToFile(result);
     }
