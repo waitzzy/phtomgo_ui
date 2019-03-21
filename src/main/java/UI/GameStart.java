@@ -303,12 +303,12 @@ public class GameStart {
     public static void main(String[] args) {
         int debug = 1;
         GameStart newGameStart;
-//        for (int i = 0; i < 20; i++) {
-//            newGameStart = new GameStart();
-//            newGameStart.forestHunting();
-//        }
+        for (int i = 0; i < 20; i++) {
+            newGameStart = new GameStart();
+            newGameStart.forestHunting();
+        }
         String result = "最终获胜\nhunter获胜次数: " + GameStart.hunterWin
-                + "\nplayer获胜次数: " + GameStart.playerWin;
+                + "\nplayer获胜次数: \n" + GameStart.playerWin;
         FileUtils.writeToFile(result);
     }
 }
