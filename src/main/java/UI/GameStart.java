@@ -307,9 +307,13 @@ public class GameStart {
             newGameStart = new GameStart();
             newGameStart.forestHunting();
         }
-        String result = "成了！\n最终获胜\nhunter获胜次数: " + GameStart.hunterWin
-                + "\nplayer获胜次数: \n" + GameStart.playerWin;
-        FileUtils.writeToFile(result);
+        System.out.println("成了！");
+        System.out.println("hunter获胜次数：" + GameStart.hunterWin);
+        System.out.println("player获胜次数" + GameStart.playerWin);
+//        会输出到final.out文件，就没必要使用File了
+//        String result = "成了！\n最终获胜\nhunter获胜次数: " + GameStart.hunterWin
+//                + "\nplayer获胜次数: " + GameStart.playerWin + "\n";
+//        FileUtils.writeToFile(result);
     }
 }
 
