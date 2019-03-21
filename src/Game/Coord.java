@@ -38,15 +38,17 @@ public class Coord implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("(%d, %s)", y+1, (char) (x + 'A'));
+        return String.format("(%d, %s)", y + 1, (char) (x + 'A'));
     }
 
-    public String toNumString(){
+    public String toNumString() {
         return String.format("(%d, %d)", x, y);
     }
 
     @Override
-    public boolean equals(Object obj) { return obj instanceof Coord && equals((Coord) obj); }
+    public boolean equals(Object obj) {
+        return obj instanceof Coord && equals((Coord) obj);
+    }
 
     static boolean isCoordLegal(int x, int y) {
         return x >= 0 && x < 9 && y >= 0 && y < 9;
@@ -61,7 +63,7 @@ public class Coord implements Serializable {
         return x == coord.x && y == coord.y;
     }
 
-    boolean isLegal(){
+    boolean isLegal() {
         return x >= 0 && x < 9 && y >= 0 && y < 9;
     }
 
@@ -78,9 +80,15 @@ public class Coord implements Serializable {
         return nearCoords;
     }
 
-    List<Coord> getNear4Coord(boolean onlyLegal) { return getNearCoord(near4Coords, onlyLegal); }
+    List<Coord> getNear4Coord(boolean onlyLegal) {
+        return getNearCoord(near4Coords, onlyLegal);
+    }
 
-    List<Coord> getNear8Coord(boolean onlyLegal) { return getNearCoord(near8Coords, onlyLegal); }
+    List<Coord> getNear8Coord(boolean onlyLegal) {
+        return getNearCoord(near8Coords, onlyLegal);
+    }
 
-    List<Coord> getNear16Coord(boolean onlyLegal) { return getNearCoord(near16Coords,onlyLegal); }
+    List<Coord> getNear16Coord(boolean onlyLegal) {
+        return getNearCoord(near16Coords, onlyLegal);
+    }
 }

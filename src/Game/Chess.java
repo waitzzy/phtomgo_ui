@@ -36,8 +36,6 @@ public class Chess implements Serializable, Cloneable {
     }
 
 
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -47,7 +45,6 @@ public class Chess implements Serializable, Cloneable {
                 status == chess.status &&
                 coord.equals(chess.coord);
     }
-
 
 
     @Override

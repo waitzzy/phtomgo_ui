@@ -1,7 +1,9 @@
 package UI;
+
 import bot.ISMCTbot;
 import Game.Judger;
 import bot.Player;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -29,8 +31,8 @@ public class GameStart {
     public static int playerWin = 0;
     public static int hunterWin = 0;
 
-    GameStart(){
-        GameStart.count=0;
+    GameStart() {
+        GameStart.count = 0;
     }
 
     public void forestHunting() {  //游戏过程
@@ -72,7 +74,7 @@ public class GameStart {
         frame.setSize(700,500);
         frame.setVisible(true);
         */
-       // System.out.println("Wellcome to DarkForest!");
+        // System.out.println("Wellcome to DarkForest!");
         /*
         class checkActionListener implements ActionListener {
             public void actionPerformed(ActionEvent event) {
@@ -100,7 +102,7 @@ public class GameStart {
 
         }
         */
-      //  String role = "white";
+        //  String role = "white";
 
        /*
         if("white".equals(role)){
@@ -194,9 +196,9 @@ public class GameStart {
                     String judgeHunterSoot = newJudger.Judgement("hunter", xx, yy);  //裁判判断输入
                     flagbot = ISMCTbot.obtainHunterJF(judgeHunterSoot, xx, yy);  //判断结果传给hunter
                     if (judgeHunterSoot.equals("legal")) {
-                       // hunterInput += "Bang!";
-                       // hunterInput += "       ";
-                       // System.out.println(hunterInput);
+                        // hunterInput += "Bang!";
+                        // hunterInput += "       ";
+                        // System.out.println(hunterInput);
                         //  text1.setText(hunterInput); //更新输入列表
                     }
                     if (judgeHunterSoot.equals("take")) { //如果出现take，则运行killDeadLife取得死亡名单，传给双方
@@ -226,27 +228,27 @@ public class GameStart {
             }
 
 
-                while (flagPlayer) {  //玩家落子循环，legal或take结束
-                    inputSoot = ISMCTbot_test.bot_run(200);
-                    if ("pass".equals(inputSoot)) {
-                        flagPlayer = false;
-                    } else { //判断输入是否合法
-                        String[] inputSootCoor = inputSoot.split(","); //识别玩家输入
-                        int xx = new Integer(inputSootCoor[0]);
-                        int yy = new Integer(inputSootCoor[1]);
-                        String judgePlayerSoot = newJudger.Judgement("player", xx, yy);  //裁判判断输入
-                        flagPlayer =  ISMCTbot_test.obtainHunterJF(judgePlayerSoot,xx,yy);  //判断结果传给玩家
-                        if (judgePlayerSoot.equals("legal")) {
+            while (flagPlayer) {  //玩家落子循环，legal或take结束
+                inputSoot = ISMCTbot_test.bot_run(200);
+                if ("pass".equals(inputSoot)) {
+                    flagPlayer = false;
+                } else { //判断输入是否合法
+                    String[] inputSootCoor = inputSoot.split(","); //识别玩家输入
+                    int xx = new Integer(inputSootCoor[0]);
+                    int yy = new Integer(inputSootCoor[1]);
+                    String judgePlayerSoot = newJudger.Judgement("player", xx, yy);  //裁判判断输入
+                    flagPlayer = ISMCTbot_test.obtainHunterJF(judgePlayerSoot, xx, yy);  //判断结果传给玩家
+                    if (judgePlayerSoot.equals("legal")) {
 
-                        }
-                        if (judgePlayerSoot.equals("take")) { //如果出现take，则运行killDeadLife取得死亡名单，传给双方
-                            ArrayList deadList = new ArrayList();
-                            deadList = newJudger.killDeadLife();
-                            ISMCTbot.killTake(deadList);
-                            ISMCTbot_test.killTake(deadList);
-                                //frame.repaint();
-                            }
-                        }
+                    }
+                    if (judgePlayerSoot.equals("take")) { //如果出现take，则运行killDeadLife取得死亡名单，传给双方
+                        ArrayList deadList = new ArrayList();
+                        deadList = newJudger.killDeadLife();
+                        ISMCTbot.killTake(deadList);
+                        ISMCTbot_test.killTake(deadList);
+                        //frame.repaint();
+                    }
+                }
 
                 /*
                 if("white".equals(role)){
@@ -274,7 +276,6 @@ public class GameStart {
             //		}
 
 
-
             if (inputSoot == "pass" && ISMCTSoot == "pass") //双方pass，跳出循环
                 flagProcesser = false;
         }
@@ -289,10 +290,10 @@ public class GameStart {
 
         String whowin = newJudger.whoWin(); //判胜负
         // finishGame(); //游戏结束
-        if(whowin=="player"){
+        if (whowin == "player") {
             GameStart.playerWin++;
         }
-        if(whowin=="hunter"){
+        if (whowin == "hunter") {
             GameStart.hunterWin++;
         }
         //frame.getContentPane().setLayout(null);
@@ -301,13 +302,13 @@ public class GameStart {
     public static void main(String[] args) {
         int debug = 1;
         GameStart newGameStart;
-        for(int i=0;i<20;i++) {
+        for (int i = 0; i < 20; i++) {
             newGameStart = new GameStart();
             newGameStart.forestHunting();
         }
         System.out.println("最终结果");
-        System.out.println("hunter获胜次数"+GameStart.hunterWin);
-        System.out.println("player获胜次数"+GameStart.playerWin);
+        System.out.println("hunter获胜次数" + GameStart.hunterWin);
+        System.out.println("player获胜次数" + GameStart.playerWin);
     }
 }
 
