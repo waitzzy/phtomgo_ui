@@ -4,6 +4,7 @@ package ISMCTS;
 import Game.ChessBoard;
 import UI.GameStart;
 
+import javax.swing.plaf.synth.SynthScrollBarUI;
 import java.util.Random;
 import java.util.ArrayList;
 
@@ -82,18 +83,28 @@ public class InformationSet {
                     coord.add(i * 10 + j);
                     sum++;
                 }
-                if (knownList[i][j] != this.player) {
+                if (knownList[i][j] != this.player&&knownList[i][j] != "0") {
                     KnownOpponentChessCount++;
                 }
             }
         }
         int need = GameStart.count - KnownOpponentChessCount;
-
+        System.out.println("player:"+this.player+"   count"+GameStart.count+"   KnownOpponentChessCount:"+KnownOpponentChessCount);
+        for (int i = 1; i <= 9; i++) {
+            for (int j = 1; j <= 9; j++) {
+                System.out.print(this.knownList[i][j]);
+            }
+            System.out.println();
+        }
         if (sum > 0) {
             for (int i = 0; i < need; i++) {
                 int index = random.nextInt(sum);
                 int temp = coord.get(index);
                 state.board[temp / 10][temp % 10] = opponent;
+                coord.remove(index);
+                sum--;
+                if(sum<1)
+                    break;
             }
         }
         return state;
