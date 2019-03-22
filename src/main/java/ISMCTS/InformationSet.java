@@ -89,7 +89,7 @@ public class InformationSet {
             }
         }
         int need = GameStart.count - KnownOpponentChessCount;
-        System.out.println("player:"+this.player+"   count"+GameStart.count+"   KnownOpponentChessCount:"+KnownOpponentChessCount);
+        System.out.println("player:"+this.player+"   count:"+GameStart.count+"   KnownOpponentChessCount:"+KnownOpponentChessCount);
         for (int i = 1; i <= 9; i++) {
             for (int j = 1; j <= 9; j++) {
                 System.out.print(this.knownList[i][j]);
@@ -101,6 +101,7 @@ public class InformationSet {
                 int index = random.nextInt(sum);
                 int temp = coord.get(index);
                 state.board[temp / 10][temp % 10] = opponent;
+                System.out.println("player:"+this.player+"  x:"+temp / 10+"  y:"+temp%10);
                 coord.remove(index);
                 sum--;
                 if(sum<1)

@@ -145,7 +145,6 @@ public class GameStart {
         while (flagProcesser) {  //游戏循环，两个pass结束
             flagPlayer = true;
             flagbot = true;
-            count = count + 1;
 
           /*  while (flagPlayer) {  //玩家落子循环，legal或take结束
                 inputFlag = false;
@@ -195,6 +194,7 @@ public class GameStart {
                     int xx = new Integer(hunterSootCoor[0]);
                     int yy = new Integer(hunterSootCoor[1]);
                     String judgeHunterSoot = newJudger.Judgement("hunter", xx, yy);  //裁判判断输入
+                    System.out.println("player："+ISMCTbot.player+"  result:"+judgeHunterSoot);
                     flagbot = ISMCTbot.obtainHunterJF(judgeHunterSoot, xx, yy);  //判断结果传给hunter
                     if (judgeHunterSoot.equals("legal")) {
                         // hunterInput += "Bang!";
@@ -210,6 +210,7 @@ public class GameStart {
                         // frame.repaint();
                     }
                 }
+                count = count + 1;
                 /*
                 if("white".equals(role)){
                     MyDrawPanelBoardWhite drawPanel1 = new MyDrawPanelBoardWhite();
@@ -238,6 +239,7 @@ public class GameStart {
                     int xx = new Integer(inputSootCoor[0]);
                     int yy = new Integer(inputSootCoor[1]);
                     String judgePlayerSoot = newJudger.Judgement("player", xx, yy);  //裁判判断输入
+                    System.out.println("player："+ISMCTbot_test.player+"  result:"+judgePlayerSoot);
                     flagPlayer = ISMCTbot_test.obtainHunterJF(judgePlayerSoot, xx, yy);  //判断结果传给玩家
                     if (judgePlayerSoot.equals("legal")) {
 

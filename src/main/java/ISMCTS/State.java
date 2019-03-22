@@ -23,7 +23,11 @@ public class State {
     public String player;
 
     State(String[][] board, String player) {
-        this.board = board;
+        for (int i = 0; i <= 10; i++) {
+            for (int j = 0; j <= 10; j++) {
+                this.board[i][j] = board[i][j];
+            }
+        }
         this.player = player;
 
     }

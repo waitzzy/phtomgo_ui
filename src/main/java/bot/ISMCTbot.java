@@ -15,7 +15,7 @@ import java.lang.*;
 public class ISMCTbot {
     public InformationSet set;
     public ISMCTS ismct;
-    private String player;
+    public String player;
 
     ISMCTbot(InformationSet set, String player) {
         this.set = set;
