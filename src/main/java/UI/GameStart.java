@@ -3,6 +3,7 @@ package UI;
 import bot.ISMCTbot;
 import Game.Judger;
 import bot.Player;
+import util.FileUtils;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -306,9 +307,13 @@ public class GameStart {
             newGameStart = new GameStart();
             newGameStart.forestHunting();
         }
-        System.out.println("最终结果");
-        System.out.println("hunter获胜次数" + GameStart.hunterWin);
-        System.out.println("player获胜次数" + GameStart.playerWin);
+        System.out.println("成了！");
+        System.out.println("hunter获胜次数：" + GameStart.hunterWin);
+        System.out.println("player获胜次数：" + GameStart.playerWin);
+//        会输出到final.out文件，就没必要使用File了
+//        String result = "成了！\n最终获胜\nhunter获胜次数: " + GameStart.hunterWin
+//                + "\nplayer获胜次数: " + GameStart.playerWin + "\n";
+//        FileUtils.writeToFile(result);
     }
 }
 
