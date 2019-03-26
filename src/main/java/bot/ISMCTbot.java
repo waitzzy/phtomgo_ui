@@ -17,7 +17,7 @@ public class ISMCTbot {
     public InformationSet set;
     public ISMCTS ismct;
     public String player;
-    private int StateNumber = 50;
+    private int StateNumber = 500;
     public Value value;
     ISMCTbot(InformationSet set, String player) {
         this.set = set;
@@ -35,7 +35,7 @@ public class ISMCTbot {
     public String bot_run(int itermax) {
         Node rootnode = new Node(player);
         String ISMCTSoot = "bang";
-        set.initialProb_form(itermax);
+        set.initialProb_form(50*itermax);
         ismct = new ISMCTS(rootnode, itermax,this.set);
         State beginState = new State();
         History history = new History();
@@ -78,7 +78,7 @@ public class ISMCTbot {
             }System.out.print("\n");
 
             */
-            set.StandardForm(itermax);
+            set.StandardForm(50*itermax);
             /*
             System.out.printf("概率分布:\n");
             for(int ii = 1; ii < set.prob_form.form.length - 1; ii++){
