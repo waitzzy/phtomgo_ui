@@ -186,7 +186,7 @@ public class GameStart {
 
             while (flagbot) { //hunter落子循环
                 //System.out.print(count + " Hunter's turn:");
-                ISMCTSoot = ISMCTbot.bot_run(500); //hunter落子
+                ISMCTSoot = ISMCTbot.bot_run(200); //hunter落子
                 if (ISMCTSoot == "pass") {
                     flagbot = false;
                 } else {
@@ -230,7 +230,7 @@ public class GameStart {
             count = count + 1;
 
             while (flagPlayer) {  //玩家落子循环，legal或take结束
-                inputSoot = ISMCTbot_test.bot_run(500);
+                inputSoot = ISMCTbot_test.bot_run(200);
                 if ("pass".equals(inputSoot)) {
                     flagPlayer = false;
                 } else { //判断输入是否合法
