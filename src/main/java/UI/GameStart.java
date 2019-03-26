@@ -9,7 +9,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-
+import bot.basicBot;
 public class GameStart {
 
     // static A BW = new A();
@@ -18,7 +18,7 @@ public class GameStart {
 
 
     ISMCTbot ISMCTbot = new ISMCTbot("2"); //初始化三个角色
-    ISMCTbot ISMCTbot_test = new ISMCTbot("1");
+    basicBot ISMCTbot_test = new basicBot("1");
     //Player newPlayer = new Player();
     Judger newJudger = new Judger();
 
@@ -194,7 +194,7 @@ public class GameStart {
                     int xx = new Integer(hunterSootCoor[0]);
                     int yy = new Integer(hunterSootCoor[1]);
                     String judgeHunterSoot = newJudger.Judgement("hunter", xx, yy);  //裁判判断输入
-                    System.out.println("player："+ISMCTbot.player+"  result:"+judgeHunterSoot);
+                    //System.out.println("player："+ISMCTbot.player+"  result:"+judgeHunterSoot);
                     flagbot = ISMCTbot.obtainHunterJF(judgeHunterSoot, xx, yy);  //判断结果传给hunter
                     if (judgeHunterSoot.equals("legal")) {
                         // hunterInput += "Bang!";
@@ -210,7 +210,6 @@ public class GameStart {
                         // frame.repaint();
                     }
                 }
-                count = count + 1;
                 /*
                 if("white".equals(role)){
                     MyDrawPanelBoardWhite drawPanel1 = new MyDrawPanelBoardWhite();
@@ -228,7 +227,7 @@ public class GameStart {
                 }
                */
             }
-
+            count = count + 1;
 
             while (flagPlayer) {  //玩家落子循环，legal或take结束
                 inputSoot = ISMCTbot_test.bot_run(200);
@@ -239,7 +238,7 @@ public class GameStart {
                     int xx = new Integer(inputSootCoor[0]);
                     int yy = new Integer(inputSootCoor[1]);
                     String judgePlayerSoot = newJudger.Judgement("player", xx, yy);  //裁判判断输入
-                    System.out.println("player："+ISMCTbot_test.player+"  result:"+judgePlayerSoot);
+                    //System.out.println("player："+ISMCTbot_test.player+"  result:"+judgePlayerSoot);
                     flagPlayer = ISMCTbot_test.obtainHunterJF(judgePlayerSoot, xx, yy);  //判断结果传给玩家
                     if (judgePlayerSoot.equals("legal")) {
 
@@ -305,7 +304,7 @@ public class GameStart {
     public static void main(String[] args) {
         int debug = 1;
         GameStart newGameStart;
-        for (int i = 0; i < 20; i++) {
+        for(int i=0;i<10;i++) {
             newGameStart = new GameStart();
             newGameStart.forestHunting();
         }

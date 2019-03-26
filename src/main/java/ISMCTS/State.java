@@ -124,11 +124,16 @@ public class State {
         }
         int hunterScale = 0;
         int playerScale = 0;
+        String oppoentplayer;
+        if(this.player=="1")
+            oppoentplayer = "2";
+        else
+            oppoentplayer ="1";
         for (int i = 1; i < 10; i++) {
             for (int j = 1; j < 10; j++) {
-                if (forestJudgerStatus[i][j].equals("2")) {
+                if (forestJudgerStatus[i][j].equals(this.player)) {
                     hunterScale++;
-                } else if (forestJudgerStatus[i][j].equals("1")) {
+                } else if (forestJudgerStatus[i][j].equals(oppoentplayer)) {
                     playerScale++;
                 }
             }
@@ -145,6 +150,8 @@ public class State {
     }
 
 
+
 }
+
 
 

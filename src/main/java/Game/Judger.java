@@ -251,7 +251,14 @@ public class Judger {
             xHunterSave = Sootx;
             yHunterSave = Sooty;
         }
-
+        /*
+        System.out.printf("Judger's board:\n");
+        for(int i = 1; i < forestJudgerStatus.length - 1; i++){
+            for(int j = 1;j < forestJudgerStatus.length - 1; j++){
+                System.out.print(forestJudgerStatus[i][j]+" ");
+            }System.out.print("\n");
+        }System.out.print("\n");
+        */
         //	System.out.println("Input is" + JudgerSpeak);
         return JudgerSpeak;
     }
@@ -401,14 +408,14 @@ public class Judger {
             whowin = "none";
         }
         if (debug == 1) {
-            /*
+
             System.out.printf("Singer's board:\n");
             for(int i = 1; i < forestJudgerStatus.length - 1; i++){
                 for(int j = 1;j < forestJudgerStatus.length - 1; j++){
                     System.out.print(forestJudgerStatus[i][j]+" ");
                 }System.out.print("\n");
             }System.out.print("\n");
-            */
+
         }
         return whowin;
     }

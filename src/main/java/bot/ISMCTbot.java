@@ -9,14 +9,16 @@ import ISMCTS.InformationSet;
 import ISMCTS.State;
 import ISMCTS.Node;
 import ISMCTS.Action;
-
+import NewIdea.Value;
+import ISMCTS.History;
 import java.lang.*;
 
 public class ISMCTbot {
     public InformationSet set;
     public ISMCTS ismct;
     public String player;
-
+    private int StateNumber = 50;
+    public Value value;
     ISMCTbot(InformationSet set, String player) {
         this.set = set;
         this.player = player;
@@ -25,26 +27,83 @@ public class ISMCTbot {
     public ISMCTbot(String player) {
         set = new InformationSet(player);
         this.player = player;
-        this.ismct = new ISMCTS(this.player);
+        this.ismct = new ISMCTS(this.player,this.set);
+        this.value = new Value();
 
     }
 
     public String bot_run(int itermax) {
         Node rootnode = new Node(player);
         String ISMCTSoot = "bang";
-        ismct = new ISMCTS(rootnode, itermax);
-        for (int kk = 0; kk < 5; kk++) {   //状态数
-            State state = set.SampleState();
+        set.initialProb_form(itermax);
+        ismct = new ISMCTS(rootnode, itermax,this.set);
+        State beginState = new State();
+        History history = new History();
+        boolean flag = true;
+        for (int kk = 0; kk < StateNumber; kk++) {   //状态数
+            history = set.SampleState();
+            State state = history.state;
+            beginState.clone(state);
+            flag = history.flag;
             if (state.getActions().size() < 1) {
                 ISMCTSoot = "pass";
                 return ISMCTSoot;
             }
-            //System.out.println("新建树成功");
             ismct.Run(state);
+            /*
+            System.out.println("当前玩家："+set.player+"   当前信息集：");
+            for(int i = 1; i < set.knownList.length - 1; i++){
+                for(int j = 1;j < set.knownList.length - 1; j++){
+                    System.out.print(set.knownList[i][j]+" ");
+                }System.out.print("\n");
+            }System.out.print("\n");
+            */
         }
+        if(flag){
+           // System.out.println("采用蒙特卡洛");
         Action action = ismct.GetAction();
         ISMCTSoot = action.x + "," + action.y;
-        return ISMCTSoot;
+        return ISMCTSoot;}
+        else{
+            //System.out.println("开始idea");
+            double sum = -10000;
+            double temp = 0;
+            int xxx=4;
+            int yyy=4;
+            /*
+            for(int ii = 1; ii < set.prob_form.form.length - 1; ii++){
+                for(int jj = 1;jj < set.prob_form.form.length - 1; jj++){
+                    System.out.print(set.prob_form.form[ii][jj]+" ");
+                }System.out.print("\n");
+            }System.out.print("\n");
+
+            */
+            set.StandardForm(itermax);
+            /*
+            System.out.printf("概率分布:\n");
+            for(int ii = 1; ii < set.prob_form.form.length - 1; ii++){
+                for(int jj = 1;jj < set.prob_form.form.length - 1; jj++){
+                    System.out.print(set.prob_form.form[ii][jj]+" ");
+                }System.out.print("\n");
+            }System.out.print("\n");
+            */
+            for(int i=1;i<10;i++){
+                for(int j=1;j<10;j++){
+                    if(beginState.board[i][j]=="0"){
+                        temp = value.GetMaxValue(beginState,beginState.player,i,j,set);
+                        //System.out.println("当前价值："+sum);
+                        if(temp>sum){
+                            sum=temp;
+                            xxx = i;
+                            yyy = j;
+                        }
+                    }
+                }
+            }
+           // System.out.println("最大价值："+sum);
+            ISMCTSoot = xxx+","+yyy;
+            return  ISMCTSoot;
+        }
     }
 
     public boolean obtainHunterJF(String hunterFeedback, int xx, int yy) {  //裁判的反馈，合法，非法，提子
@@ -76,6 +135,15 @@ public class ISMCTbot {
             set.knownList[m][n] = "0";
         }
     }
+
+    public void SelectAction(){
+        for(int i = 1;i<10;i++){
+            for(int j=0;j<10;j++){
+
+            }
+        }
+    }
+
 }
 
 

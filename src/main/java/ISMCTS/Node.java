@@ -32,24 +32,35 @@ public class Node {
         this.visits = 0;
         this.avails = 1;
         children = new ArrayList<Node>();
+        //children = null;
 
     }
 
     public ArrayList<Action> GetUntriedMoves(ArrayList<Action> legalAction) {
         ArrayList<Action> TriedMove = new ArrayList<Action>();
         ArrayList<Action> result = new ArrayList<Action>();
-        if (visits != 0) {
+        //System.out.println(this.visits);
+        if (children!=null) {
             //System.out.println("getaction finish");
             for (Node child : children) {
+                //System.out.println("给老子冲");
                 TriedMove.add(child.action);
             }
         }
         for (Action action_1 : legalAction) {
+            boolean flag = true;
             for (Action action_2 : TriedMove) {
-                if (action_2.equals(action_1))
-                    continue;
+               // System.out.println("action1: "+action_1.x+action_1.y+"  action2:"+action_2.x+action_2.y);
+                if (action_2.equals(action_1)) {
+                    flag = false;
+
+                  //  System.out.println("重复");
+                    break;
+                }
             }
-            result.add(action_1);
+            if(flag) {
+                result.add(action_1);
+            }
         }
         return result;
     }
@@ -62,17 +73,22 @@ public class Node {
                     legalChildren.add(child);
             }
         }
-        double sum = 0;
-        double temp = 0;
+       // System.out.println(legalChildren.size());
+        double sum = -1;
+        double temp;
         Node bestchild = null;
-        for (Node child : children) {
+        for (Node child : legalChildren) {
+            //System.out.println("冲");
+           // System.out.println(" win:"+child.wins+" visits:"+child.visits+" avails:"+child.avails);
             temp = (double) child.wins / (double) child.visits + 0.7 * Math.sqrt(2.0 * Math.log((double) child.avails / (double) child.visits));
             if (temp > sum) {
                 sum = temp;
                 bestchild = child;
             }
+            //System.out.println(temp);
             child.avails++;
         }
+        //System.out.println(bestchild.GetUCBscore());
         return bestchild;
     }
 
@@ -88,6 +104,12 @@ public class Node {
         if (terminalState.WhoWin()) {
             wins++;
         }
+    }
+
+    public double GetUCBscore(){
+        double temp = 0;
+        temp = (double) wins / (double) visits + 0.7 * Math.sqrt(2.0 * Math.log((double) avails / (double) visits));
+        return temp;
     }
 
 

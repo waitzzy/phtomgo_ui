@@ -13,18 +13,21 @@ public class ISMCTS {
     private Node root;
     private int itermax;
     private transient Random random;
+    private InformationSet set;
 
 
-    public ISMCTS(Node node, int itermax) {
+    public ISMCTS(Node node, int itermax,InformationSet set) {
         this.root = node;
         this.itermax = itermax;
         this.random = new Random();
+        this.set = set;
     }
 
-    public ISMCTS(String player) {
+    public ISMCTS(String player,InformationSet set) {
         this.root = new Node(player);
         this.itermax = 1000;
         this.random = new Random();
+        this.set = set;
     }
 
     public void Run(State rootstate) {
@@ -42,11 +45,15 @@ public class ISMCTS {
 			}
            */
             //select
+           // int xuanzetime = 0;
             while (IsFullyExpanded(state, node)) {
+               // xuanzetime++;
+               // System.out.println("选择次数："+xuanzetime);
                 node = node.UCBSelectChild(state.getActions());
                 state.DoAction(node.action);
             }
-            //System.out.println("选择完毕");
+           //
+            // System.out.println("选择完毕");
             //expand
             ArrayList<Action> untriedAction = node.GetUntriedMoves(state.getActions());
             if (untriedAction.size() > 0) {
@@ -83,9 +90,12 @@ public class ISMCTS {
             }
             //System.out.println("模拟完毕");
             //backpropagete
-            while (node.parent != null) {
+            while(node.parent!=null){
                 node.Update(state);
                 node = node.parent;
+            }
+            if(state.WhoWin()){
+                set.updatePro_form(itermax);
             }
             //System.out.println("回溯完毕");
         }
@@ -95,14 +105,18 @@ public class ISMCTS {
     public Action GetAction() {
         int temp = 0;
         int sum = 0;
+        int count = 0;
         Node bestchild = null;
         for (Node child : root.children) {
+            //System.out.println("孩子数："+count+"  总得分： "+child.GetUCBscore());
             temp = child.visits;
             if (temp > sum) {
                 sum = temp;
                 bestchild = child;
             }
+            count++;
         }
+       // System.out.println("x:"+bestchild.action.x+" y:"+bestchild.action.y);
         return bestchild.action;
     }
 
