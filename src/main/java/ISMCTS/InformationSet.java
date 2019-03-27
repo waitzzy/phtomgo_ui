@@ -112,7 +112,7 @@ public class InformationSet {
         }
         int need = GameStart.count - KnownOpponentChessCount;
         //System.out.println(" 当前需要棋子数："+need);
-        if(GameStart.count<10){
+        if(GameStart.count<15){
             history.flag = false;
         }
         /*
