@@ -304,7 +304,7 @@ public class GameStart {
     public static void main(String[] args) {
         int debug = 1;
         GameStart newGameStart;
-        for(int i=0;i<50;i++) {
+        for(int i=0;i<500;i++) {
             newGameStart = new GameStart();
             newGameStart.forestHunting();
         }
