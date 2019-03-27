@@ -9,7 +9,6 @@ public class Value {
     //double [][] valueForm ;
     double sumValue;
     public Value(){
-
          sumValue = 0;
     }
 
