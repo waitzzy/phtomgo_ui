@@ -13,18 +13,18 @@ import NewIdea.Value;
 import ISMCTS.History;
 import java.lang.*;
 
-public class ISMCTbot {
+public class ISMCTBot {
     public InformationSet set;
     public ISMCTS ismct;
     public String player;
     private int StateNumber = 20;
     public Value value;
-    ISMCTbot(InformationSet set, String player) {
+    ISMCTBot(InformationSet set, String player) {
         this.set = set;
         this.player = player;
     }
 
-    public ISMCTbot(String player) {
+    public ISMCTBot(String player) {
         set = new InformationSet(player);
         this.player = player;
         this.ismct = new ISMCTS(this.player,this.set);
@@ -32,7 +32,7 @@ public class ISMCTbot {
 
     }
 
-    public String bot_run(int itermax) {
+    public String botRun(int itermax) {
         Node rootnode = new Node(player);
         String ISMCTSoot = "bang";
         set.initialProb_form(10*itermax);
@@ -124,7 +124,7 @@ public class ISMCTbot {
         return flag;
     }
 
-    public void killTake(ArrayList deadList) {
+    public void killTake(List deadList) {
         int deadNum = 0;
         int m = 0;
         int n = 0;

@@ -12,24 +12,24 @@ import ISMCTS.Action;
 import ISMCTS.basicISMCT;
 import java.lang.*;
 import ISMCTS.History;
-public class basicBot {
+public class BasicBot {
     public InformationSet set;
     public basicISMCT ismct;
     public String player;
 
-    basicBot(InformationSet set, String player) {
+    BasicBot(InformationSet set, String player) {
         this.set = set;
         this.player = player;
     }
 
-    public basicBot(String player) {
+    public BasicBot(String player) {
         set = new InformationSet(player);
         this.player = player;
         this.ismct = new basicISMCT(this.player);
 
     }
 
-    public String bot_run(int itermax) {
+    public String botRun(int itermax) {
         Node rootnode = new Node(player);
         String ISMCTSoot = "bang";
         ismct = new basicISMCT(rootnode, itermax);
@@ -67,7 +67,7 @@ public class basicBot {
         return flag;
     }
 
-    public void killTake(ArrayList deadList) {
+    public void killTake(List deadList) {
         int deadNum = 0;
         int m = 0;
         int n = 0;

@@ -40,7 +40,7 @@ public class Judger {
     int yHunterSave = 0;
     static boolean lifeState = false;
 
-    public String Judgement(String color, int Sootx, int Sooty) { //先判断有没有提子，然后判断有没有非法，剩下的是合法
+    public String judgement(String color, int Sootx, int Sooty) { //先判断有没有提子，然后判断有没有非法，剩下的是合法
 
         String JudgerSpeak = "legal";
         lifeState = true;
@@ -327,7 +327,6 @@ public class Judger {
     }
 
     public ArrayList killDeadLife() { //提子，提去所有标记为4的子
-        //System.out.println("kill1");
         ArrayList deadList = new ArrayList();
         // System.out.println("These lives had been take:");
         for (int i = 1; i < 10; i++) {
