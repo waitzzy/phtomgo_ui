@@ -30,7 +30,7 @@ public class Value {
             {0.02,0,0,0,0,0},
     };
 
-
+    /*
     transient private int[][] Effect_Area = {
             {0, 1},{0,2},{0,3},{0,4},{0,5},
             {1, 0},{2,0},{3,0},{4,0},{5,0},
@@ -45,6 +45,22 @@ public class Value {
             {-2, -1}, {-2,-3},{-2,-4},{-3,-4},{-1,-2},{-3,-2},{-4,-2},{-4,-3},
             {2, -1}, {2,-3},{2,-4},{3,-4},{1,-2},{3,-2},{4,-2},{4,-3},
     };
+    */
+    transient private int[][] Effect_Area = {
+            {0, 1},{0,2},{0,3},
+            {1, 0},{2,0},{3,0},
+            {0, -1},{0,-2},{0,-3},
+            {-1, 0},{-2,0},{-3,0},
+            {1, 1}, {2, 2},
+            {-1, 1},{-2, 2},
+            {-1, -1},{-2, -2},
+            {1, -1},{2, -2},
+            {2, 1},{1,2},
+            {-2, 1}, {-1,2},
+            {-2, -1}, {-1,-2},
+            {2, -1}, {1,-2},
+    };
+
 
     public double GetMaxValue(State state, String player,int xx,int yy,InformationSet set){
         double Value = 0;
@@ -232,20 +248,21 @@ public class Value {
     private double GetEffectValue(int xx,int yy,int x,int y){
         double distance = Math.sqrt((xx-x)*(xx-x)+(yy-y)*(yy-y));
         if(distance == 1){
-            return 105;
+            return 9;
         }
         else if(distance == Math.sqrt(2)){
-            return 77;
+            return 7;
         }
         else if(distance == 2){
-            return 42;
+            return 4;
         }
         else if(distance == Math.sqrt(5)){
-            return 38;
+            return 3;
         }
         else if(distance == 3){
-            return 14;
+            return 1;
         }
+        /*
         else if(distance == Math.sqrt(8)){
             return 11;
         }
@@ -258,6 +275,7 @@ public class Value {
         else if(distance == 5){
             return 1;
         }
+        */
         else
             return 0;
     }
