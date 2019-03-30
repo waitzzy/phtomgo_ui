@@ -1,7 +1,5 @@
 package bot;
 
-import java.util.ArrayList;
-
 import java.util.*;
 
 import ISMCTS.ISMCTS;
@@ -35,13 +33,13 @@ public class ISMCTBot {
     public String botRun(int itermax) {
         Node rootnode = new Node(player);
         String ISMCTSoot = "bang";
-        set.initialProb_form(10*itermax);
+        set.initialProbForm(10*itermax);
         ismct = new ISMCTS(rootnode, itermax,this.set);
         State beginState = new State();
         History history = new History();
         boolean flag = true;
         for (int kk = 0; kk < StateNumber; kk++) {   //状态数
-            history = set.SampleState();
+            history = set.sampleState();
             State state = history.state;
             beginState.clone(state);
             flag = history.flag;
@@ -71,19 +69,19 @@ public class ISMCTBot {
             int xxx=4;
             int yyy=4;
             /*
-            for(int ii = 1; ii < set.prob_form.form.length - 1; ii++){
-                for(int jj = 1;jj < set.prob_form.form.length - 1; jj++){
-                    System.out.print(set.prob_form.form[ii][jj]+" ");
+            for(int ii = 1; ii < set.probForm.form.length - 1; ii++){
+                for(int jj = 1;jj < set.probForm.form.length - 1; jj++){
+                    System.out.print(set.probForm.form[ii][jj]+" ");
                 }System.out.print("\n");
             }System.out.print("\n");
 
             */
-            set.StandardForm(10*itermax);
+            set.standardForm(10*itermax);
             /*
             System.out.printf("概率分布:\n");
-            for(int ii = 1; ii < set.prob_form.form.length - 1; ii++){
-                for(int jj = 1;jj < set.prob_form.form.length - 1; jj++){
-                    System.out.print(set.prob_form.form[ii][jj]+" ");
+            for(int ii = 1; ii < set.probForm.form.length - 1; ii++){
+                for(int jj = 1;jj < set.probForm.form.length - 1; jj++){
+                    System.out.print(set.probForm.form[ii][jj]+" ");
                 }System.out.print("\n");
             }System.out.print("\n");
             */

@@ -9,7 +9,7 @@ import bot.BasicBot;
 
 public class GameStart {
 
-    /* 对手下的棋子数字 */
+    /* 对手下的棋子数 */
     public static int count = 0;
     public static int playerWin = 0;
     public static int hunterWin = 0;

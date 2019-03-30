@@ -1,10 +1,7 @@
 package bot;
 
-import java.util.ArrayList;
-
 import java.util.*;
 
-import ISMCTS.ISMCTS;
 import ISMCTS.InformationSet;
 import ISMCTS.State;
 import ISMCTS.Node;
@@ -35,7 +32,7 @@ public class BasicBot {
         ismct = new basicISMCT(rootnode, itermax);
         History history = new History();
         for (int kk = 0; kk < 5; kk++) {   //状态数
-            history = set.SampleState();
+            history = set.sampleState();
             State state = history.state;
             if (state.getActions().size() < 1) {
                 ISMCTSoot = "pass";

@@ -1,8 +1,5 @@
 package ISMCTS;
 
-import Game.Chess;
-import Game.ChessBoard;
-import Game.Coord;
 import Game.TakeChess;
 
 import java.util.ArrayList;
@@ -95,7 +92,7 @@ public class ISMCTS {
                 node = node.parent;
             }
             if(state.WhoWin()){
-                set.updatePro_form(itermax);
+                set.updateProForm(itermax);
             }
             //System.out.println("回溯完毕");
         }

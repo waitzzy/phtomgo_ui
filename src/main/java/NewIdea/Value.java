@@ -1,9 +1,7 @@
 package NewIdea;
 import ISMCTS.InformationSet;
 import ISMCTS.State;
-import UI.GameStart;
 
-import java.math.*;
 public class Value {
     //private int basicValue = 1412;
     //double [][] valueForm ;
@@ -70,7 +68,7 @@ public class Value {
                     Value = Value+GetChessValue(i,j);
                 }
                 else if(state.board[i][j]!=player&&state.board[i][j]!="0"){
-                    Value = Value-GetChessValue(i,j)*set.prob_form.form[i][j];
+                    Value = Value-GetChessValue(i,j)*set.probForm.form[i][j];
                 }
             }
         }
