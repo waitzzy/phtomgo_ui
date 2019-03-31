@@ -1,12 +1,10 @@
 package ISMCTS;
 
-import Game.Chess;
-import Game.ChessBoard;
-import Game.Coord;
 import Game.TakeChess;
 
 import java.util.ArrayList;
 
+import java.util.List;
 import java.util.Random;
 
 public class basicISMCT {
@@ -43,24 +41,24 @@ public class basicISMCT {
            */
             //select
             while (IsFullyExpanded(state, node)) {
-                node = node.UCBSelectChild(state.getActions());
-                state.DoAction(node.action);
+                node = node.ucbSelectChild(state.getActions());
+                state.doAction(node.action);
             }
             //System.out.println("选择完毕");
             //expand
-            ArrayList<Action> untriedAction = node.GetUntriedMoves(state.getActions());
+            List<Action> untriedAction = node.getUntriedMoves(state.getActions());
             if (untriedAction.size() > 0) {
                 Action action = untriedAction.get(random.nextInt(untriedAction.size()));
                 playerJustMoved = state.player;
-                state.DoAction(action);
-                node = node.Addchild(action, playerJustMoved);
+                state.doAction(action);
+                node = node.addChild(action, playerJustMoved);
             }
             //System.out.println("扩展完毕");
             //simulate
-            ArrayList<Action> nextMove = state.getActions();
+            List<Action> nextMove = state.getActions();
             while (state.getActions().size() > 0) {
                 playerJustMoved = state.player;
-                Action newAction = state.DoAction(nextMove.get(random.nextInt(nextMove.size())));
+                Action newAction = state.doAction(nextMove.get(random.nextInt(nextMove.size())));
                 TakeChess takeChess = new TakeChess(state.board);
                 String islegal = takeChess.Judgement(playerJustMoved, newAction.x, newAction.y);
                 if (islegal == "illegal") {
@@ -84,7 +82,7 @@ public class basicISMCT {
             //System.out.println("模拟完毕");
             //backpropagete
             while (node.parent != null) {
-                node.Update(state);
+                node.update(state);
                 node = node.parent;
             }
             //System.out.println("回溯完毕");
@@ -107,13 +105,11 @@ public class basicISMCT {
     }
 
     public boolean IsFullyExpanded(State state, Node node) {
-        ArrayList<Action> actions_1 = state.getActions();
-        ArrayList<Action> actions_2 = node.GetUntriedMoves(state.getActions());
+        List<Action> actions_1 = state.getActions();
+        List<Action> actions_2 = node.getUntriedMoves(state.getActions());
         if (actions_1.size() >= 1 && actions_2.size() < 1) {
             return true;
         } else
             return false;
     }
-
-
 }
