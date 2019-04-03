@@ -31,7 +31,7 @@ public class BasicBot {
         String ISMCTSoot = "bang";
         ismct = new basicISMCT(rootnode, itermax);
         History history = new History();
-        for (int kk = 0; kk < 5; kk++) {   //状态数
+        for (int kk = 0; kk < 20; kk++) {   //状态数
             history = set.sampleState();
             State state = history.state;
             if (state.getActions().size() < 1) {

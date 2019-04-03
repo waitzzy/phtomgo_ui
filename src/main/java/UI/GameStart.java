@@ -38,7 +38,7 @@ public class GameStart {
             flagBot = true;
 
             while (flagBot) {//hunter落子循环
-                ismctSoot = ismctBot.botRun(200);//hunter落子
+                ismctSoot = ismctBot.botRun(500);//hunter落子
                 if (ismctSoot == "pass") {
                     flagBot = false;
                 } else {
@@ -60,7 +60,7 @@ public class GameStart {
             count++;//对局数增加
 
             while (flagPlayer) {//玩家落子循环，legal或take结束
-                inputSoot = basicBot.botRun(200);
+                inputSoot = basicBot.botRun(500);
                 if ("pass".equals(inputSoot)) {
                     flagPlayer = false;
                 } else {//判断输入是否合法
