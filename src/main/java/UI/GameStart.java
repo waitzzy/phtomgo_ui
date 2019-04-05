@@ -15,8 +15,9 @@ public class GameStart {
     public static int hunterWin = 0;
 
     /* 初始化2个对象和1个裁判 */
-    ISMCTBot ismctBot = new ISMCTBot("2");
+    //ISMCTBot ismctBot = new ISMCTBot("2");
     BasicBot basicBot = new BasicBot("1");
+    ISMCTBot ismctBot = new ISMCTBot("2");
     Judger judger = new Judger();
 
     /* 循环标记 */
