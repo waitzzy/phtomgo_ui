@@ -13,6 +13,7 @@ public class BasicBot {
     public InformationSet set;
     public basicISMCT ismct;
     public String player;
+    public int statenumber = 100;
 
     BasicBot(InformationSet set, String player) {
         this.set = set;
@@ -31,7 +32,7 @@ public class BasicBot {
         String ISMCTSoot = "bang";
         ismct = new basicISMCT(rootnode, itermax);
         History history = new History();
-        for (int kk = 0; kk < 20; kk++) {   //状态数
+        for (int kk = 0; kk <statenumber  ; kk++) {   //状态数
             history = set.sampleState();
             State state = history.state;
             if (state.getActions().size() < 1) {
