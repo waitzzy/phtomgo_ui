@@ -33,7 +33,7 @@ public class ISMCTBot {
     public String botRun(int itermax) {
         Node rootnode = new Node(player);
         String ISMCTSoot = "bang";
-        set.initialProbForm(10*itermax);
+        set.initialProbForm(5*itermax);
         ismct = new ISMCTS(rootnode, itermax,this.set);
         State beginState = new State();
         History history = new History();
@@ -76,7 +76,7 @@ public class ISMCTBot {
             }System.out.print("\n");
 
             */
-            set.standardForm(10*itermax);
+            set.standardForm(5*itermax);
             /*
             System.out.printf("概率分布:\n");
             for(int ii = 1; ii < set.probForm.form.length - 1; ii++){
