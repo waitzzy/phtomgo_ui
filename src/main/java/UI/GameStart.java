@@ -97,7 +97,7 @@ public class GameStart {
 
     public static void main(String[] args) {
         GameStart newGameStart;
-        for (int i = 0; i < 500; i++) {
+        for (int i = 0; i < 250; i++) {
             newGameStart = new GameStart();
             newGameStart.forestHunting();
         }
