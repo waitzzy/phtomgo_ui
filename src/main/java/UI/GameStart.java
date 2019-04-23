@@ -56,6 +56,8 @@ public class GameStart {
                         ismctBot.killTake(deadList);//hunter更新局面
                         basicBot.killTake(deadList);//player更新局面
                     }
+
+
                 }
             }
             count++;//对局数增加
@@ -80,24 +82,24 @@ public class GameStart {
                     }
                 }
 
-                if (inputSoot == "pass" && ismctSoot == "pass") {//双方pass，跳出循环
-                    flagProcesser = false;
-                }
             }
+            if(inputSoot == "pass"&&ismctSoot == "pass") //双方pass，跳出循环
+                flagProcesser = false;
+        }
 
-            String whoWin = judger.whoWin();//判胜负
-            if (whoWin == "player") {
-                GameStart.playerWin++;
-            }
-            if (whoWin == "hunter") {
-                GameStart.hunterWin++;
-            }
+        String whoWin = judger.whoWin();//判胜负
+        if (whoWin == "player") {
+            GameStart.playerWin++;
+        }
+        if (whoWin == "hunter") {
+            GameStart.hunterWin++;
         }
     }
 
     public static void main(String[] args) {
         GameStart newGameStart;
-        for (int i = 0; i < 250; i++) {
+        for (int i = 0; i < 10; i++) {
+            System.out.println("fuck");
             newGameStart = new GameStart();
             newGameStart.forestHunting();
         }

@@ -76,6 +76,8 @@ public class Value {
         return Value;
     }
 
+
+
     /*
 
     public double GetChessValue(int xx,int yy){
