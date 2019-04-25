@@ -75,7 +75,7 @@ public class InformationSet {
         }
 
         int need = GameStart.count - knownOpponentChessCount;
-        if (GameStart.count < 10) {
+        if (GameStart.count < 5) {
             history.flag = false;
         }
 
@@ -95,17 +95,29 @@ public class InformationSet {
         return history;
     }
 
-    public void updateProForm(int max) {
+    public void updateProForm() {
         for (int i = 0; i < updatecoord.size(); i++) {
-            if (probForm.form[updatecoord.get(i) / 10][updatecoord.get(i) % 10] != max)
                 probForm.form[updatecoord.get(i) / 10][updatecoord.get(i) % 10]++;
         }
     }
 
-    public void standardForm(int max) {
+    public void standardForm(double pp) {
+        double max = 0;
         for (int i = 1; i < 10; i++) {
             for (int j = 1; j < 10; j++) {
-                probForm.form[i][j] = probForm.form[i][j] / max;
+                if(probForm.form[i][j]>max)
+                    max = probForm.form[i][j];
+            }
+        }
+        max = pp*max;
+        for(int i = 1;i<10;i++){
+            for(int j =1;j<10;j++){
+                if(probForm.form[i][j]>=max){
+                    probForm.form[i][j] = 1;
+                }
+                else{
+                    probForm.form[i][j] = probForm.form[i][j]/max;
+                }
             }
         }
     }

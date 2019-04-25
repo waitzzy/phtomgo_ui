@@ -33,7 +33,7 @@ public class ISMCTBot {
     public String botRun(int itermax) {
         Node rootnode = new Node(player);
         String ISMCTSoot = "bang";
-        set.initialProbForm(5*itermax);
+        set.initialProbForm(100000);
         ismct = new ISMCTS(rootnode, itermax,this.set);
         State beginState = new State();
         History history = new History();

@@ -78,7 +78,7 @@ public class ISMCTS {
                 node = node.parent;
             }
             if (state.whoWin()) {
-                set.updateProForm(itermax);
+                set.updateProForm();
             }
             //System.out.println("回溯完毕");
         }

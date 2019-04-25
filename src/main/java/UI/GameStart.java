@@ -99,7 +99,6 @@ public class GameStart {
     public static void main(String[] args) {
         GameStart newGameStart;
         for (int i = 0; i < 10; i++) {
-            System.out.println("fuck");
             newGameStart = new GameStart();
             newGameStart.forestHunting();
         }

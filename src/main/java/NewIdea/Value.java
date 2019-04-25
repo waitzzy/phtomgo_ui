@@ -248,19 +248,22 @@ public class Value {
     private double GetEffectValue(int xx,int yy,int x,int y){
         double distance = Math.sqrt((xx-x)*(xx-x)+(yy-y)*(yy-y));
         if(distance == 1){
-            return 9;
+            return 21;
         }
         else if(distance == Math.sqrt(2)){
-            return 7;
+            return 15;
         }
         else if(distance == 2){
-            return 4;
+            return 8;
         }
         else if(distance == Math.sqrt(5)){
-            return 3;
+            return 5;
+        }
+        else if(distance == Math.sqrt(8)){
+            return 2;
         }
         else if(distance == 3){
-            return 1;
+            return 3;
         }
         /*
         else if(distance == Math.sqrt(8)){
