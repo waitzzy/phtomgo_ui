@@ -13,7 +13,7 @@ public class BasicBot {
     public InformationSet set;
     public basicISMCT ismct;
     public String player;
-    public int statenumber = 5;
+    public int statenumber = 20;
 
     BasicBot(InformationSet set, String player) {
         this.set = set;

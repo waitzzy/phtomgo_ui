@@ -15,7 +15,7 @@ public class ISMCTBot {
     public InformationSet set;
     public ISMCTS ismct;
     public String player;
-    private int StateNumber = 5;
+    private int StateNumber = 20;
     public Value value;
     ISMCTBot(InformationSet set, String player) {
         this.set = set;
