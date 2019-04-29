@@ -76,7 +76,7 @@ public class ISMCTBot {
             }System.out.print("\n");
 
             */
-            set.standardForm(0.7);
+            set.standardForm(1);
             /*
             System.out.printf("概率分布:\n");
             for(int ii = 1; ii < set.probForm.form.length - 1; ii++){
