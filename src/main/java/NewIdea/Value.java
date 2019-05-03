@@ -60,20 +60,40 @@ public class Value {
     };
 
 
-    public double GetMaxValue(State state, String player,int xx,int yy,InformationSet set){
+    public double GetMaxValue( String player,int xx,int yy,InformationSet set){
         double Value = 0;
-        for(int i=1;i<10;i++){
-            for(int j=1;j<10;j++){
-                if(state.board[i][j]==player){
-                    Value = Value+GetChessValue(i,j);
-                }
-                else if(state.board[i][j]!=player&&state.board[i][j]!="0"){
-                    Value = Value-GetChessValue(i,j)*set.probForm.form[i][j];
+        int opponentsum=0;
+        if(xx-1>0&&set.knownList[xx-1][yy]!=player&&set.knownList[xx-1][yy]!="0"&&set.probForm.form[xx-1][yy]==1){
+            opponentsum++;
+        }
+        if(yy-1>0&&set.knownList[xx][yy-1]!=player&&set.knownList[xx][yy-1]!="0"&&set.probForm.form[xx][yy-1]==1){
+            opponentsum++;
+        }
+
+        if(yy+1<10&&set.knownList[xx][yy+1]!=player&&set.knownList[xx][yy+1]!="0"&&set.probForm.form[xx][yy+1]==1){
+            opponentsum++;
+        }
+        if(xx+1<10&&set.knownList[xx+1][yy]!=player&&set.knownList[xx+1][yy]!="0"&&set.probForm.form[xx+1][yy]==1){
+            opponentsum++;
+        }
+        if(opponentsum>2){
+            return 0;
+        }
+        else{
+            for(int i=1;i<10;i++){
+                for(int j=1;j<10;j++){
+                    if(set.knownList[i][j]==player){
+                        Value = Value+GetChessValue(i,j);
+                    }
+                    else if(set.knownList[i][j]!=player&&set.knownList[i][j]!="0"){
+                        Value = Value-GetChessValue(i,j)*set.probForm.form[i][j];
+                    }
                 }
             }
+            Value = Value+GetChessValue(xx,yy);
+            return Value;
         }
-        Value = Value+GetChessValue(xx,yy);
-        return Value;
+
     }
 
 

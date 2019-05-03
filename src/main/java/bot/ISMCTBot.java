@@ -15,7 +15,7 @@ public class ISMCTBot {
     public InformationSet set;
     public ISMCTS ismct;
     public String player;
-    private int StateNumber = 20;
+    private int StateNumber = 10;
     public Value value;
     ISMCTBot(InformationSet set, String player) {
         this.set = set;
@@ -76,7 +76,7 @@ public class ISMCTBot {
             }System.out.print("\n");
 
             */
-            set.standardForm(0.5);
+            set.standardForm(0.7);
             /*
             System.out.printf("概率分布:\n");
             for(int ii = 1; ii < set.probForm.form.length - 1; ii++){
@@ -87,8 +87,8 @@ public class ISMCTBot {
             */
             for(int i=1;i<10;i++){
                 for(int j=1;j<10;j++){
-                    if(beginState.board[i][j]=="0"){
-                        temp = value.GetMaxValue(beginState,beginState.player,i,j,set);
+                    if(set.knownList[i][j]=="0"){
+                        temp = value.GetMaxValue(beginState.player,i,j,set);
                         //System.out.println("当前价值："+sum);
                         if(temp>sum){
                             sum=temp;
