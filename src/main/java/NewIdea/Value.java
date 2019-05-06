@@ -2,30 +2,32 @@ package NewIdea;
 import ISMCTS.InformationSet;
 import ISMCTS.State;
 
+
 public class Value {
     //private int basicValue = 1412;
     //double [][] valueForm ;
     double sumValue;
-    public Value(){
-         sumValue = 0;
+
+    public Value() {
+        sumValue = 0;
     }
 
 
-    private int [][]ChessEffect = {
-            {210,105,42,14,4,1},
-            {105,77,38,8,1,0},
-            {42,38,11,2,0,0},
-            {14,8,2,1,0,0},
-            {4,1,0,0,0,0},
-            {1,0,0,0,0,0}
+    private int[][] ChessEffect = {
+            {210, 105, 42, 14, 4, 1},
+            {105, 77, 38, 8, 1, 0},
+            {42, 38, 11, 2, 0, 0},
+            {14, 8, 2, 1, 0, 0},
+            {4, 1, 0, 0, 0, 0},
+            {1, 0, 0, 0, 0, 0}
     };
 
-    transient private double[][] Compensate_Area={
-            {999,999,0.5,0.2,0.067,0.02},
-            {999,999,0.367,0.181,0.038,0},
-            {0.5,0.367,0.181,0.052,0,0},
-            {0.067,0.038,0,0,0,0},
-            {0.02,0,0,0,0,0},
+    transient private double[][] Compensate_Area = {
+            {999, 999, 0.5, 0.2, 0.067, 0.02},
+            {999, 999, 0.367, 0.181, 0.038, 0},
+            {0.5, 0.367, 0.181, 0.052, 0, 0},
+            {0.067, 0.038, 0, 0, 0, 0},
+            {0.02, 0, 0, 0, 0, 0},
     };
 
     /*
@@ -45,57 +47,44 @@ public class Value {
     };
     */
     transient private int[][] Effect_Area = {
-            {0, 1},{0,2},{0,3},
-            {1, 0},{2,0},{3,0},
-            {0, -1},{0,-2},{0,-3},
-            {-1, 0},{-2,0},{-3,0},
+            {0, 1}, {0, 2}, {0, 3},
+            {1, 0}, {2, 0}, {3, 0},
+            {0, -1}, {0, -2}, {0, -3},
+            {-1, 0}, {-2, 0}, {-3, 0},
             {1, 1}, {2, 2},
-            {-1, 1},{-2, 2},
-            {-1, -1},{-2, -2},
-            {1, -1},{2, -2},
-            {2, 1},{1,2},
-            {-2, 1}, {-1,2},
-            {-2, -1}, {-1,-2},
-            {2, -1}, {1,-2},
+            {-1, 1}, {-2, 2},
+            {-1, -1}, {-2, -2},
+            {1, -1}, {2, -2},
+            {2, 1}, {1, 2},
+            {-2, 1}, {-1, 2},
+            {-2, -1}, {-1, -2},
+            {2, -1}, {1, -2},
     };
 
 
-    public double GetMaxValue( String player,int xx,int yy,InformationSet set){
+    public double GetMaxValue(String player, int xx, int yy, InformationSet set) {
+        liberty new_liberty = new liberty(set);
         double Value = 0;
-        int opponentsum=0;
-        if(xx-1>0&&set.knownList[xx-1][yy]!=player&&set.knownList[xx-1][yy]!="0"&&set.probForm.form[xx-1][yy]==1){
-            opponentsum++;
-        }
-        if(yy-1>0&&set.knownList[xx][yy-1]!=player&&set.knownList[xx][yy-1]!="0"&&set.probForm.form[xx][yy-1]==1){
-            opponentsum++;
-        }
-
-        if(yy+1<10&&set.knownList[xx][yy+1]!=player&&set.knownList[xx][yy+1]!="0"&&set.probForm.form[xx][yy+1]==1){
-            opponentsum++;
-        }
-        if(xx+1<10&&set.knownList[xx+1][yy]!=player&&set.knownList[xx+1][yy]!="0"&&set.probForm.form[xx+1][yy]==1){
-            opponentsum++;
-        }
-        if(opponentsum>2){
+        int opponentsum;
+        new_liberty.Getblock(xx,yy);
+        opponentsum = new_liberty.GetOpponentsum(player);
+        if (opponentsum > 0.5*new_liberty.blockLength) {
             return 0;
-        }
-        else{
-            for(int i=1;i<10;i++){
-                for(int j=1;j<10;j++){
-                    if(set.knownList[i][j]==player){
-                        Value = Value+GetChessValue(i,j);
-                    }
-                    else if(set.knownList[i][j]!=player&&set.knownList[i][j]!="0"){
-                        Value = Value-GetChessValue(i,j)*set.probForm.form[i][j];
+        } else {
+            for (int i = 1; i < 10; i++) {
+                for (int j = 1; j < 10; j++) {
+                    if (set.knownList[i][j] == player) {
+                        Value = Value + GetChessValue(i, j);
+                    } else if (set.knownList[i][j] != player && set.knownList[i][j] != "0") {
+                        Value = Value - GetChessValue(i, j) * set.probForm.form[i][j];
                     }
                 }
             }
-            Value = Value+GetChessValue(xx,yy);
+            Value = Value + GetChessValue(xx, yy);
             return Value;
         }
 
     }
-
 
 
     /*
@@ -157,24 +146,20 @@ public class Value {
 
     }
 */
-    public double GetChessValue(int xx,int yy){
+    public double GetChessValue(int xx, int yy) {
         double ChessValue = 0;
-        for(int [] para :Effect_Area) {
+        for (int[] para : Effect_Area) {
             if (xx + para[0] > 0 && xx + para[0] < 10 && yy + para[1] > 0 && yy + para[1] < 10) {
-                if((xx + para[0] == 1||xx + para[0]==9)&&(yy + para[1] == 1||yy + para[1]==9)){
-                    ChessValue = ChessValue+ 4*GetEffectValue(xx + para[0],yy + para[1],xx,yy);
-                }
-                else if((xx + para[0] == 1||xx + para[0]==9)&&(yy + para[1] == 2||yy + para[1]==8)){
-                    ChessValue =ChessValue+ 3.5*GetEffectValue(xx + para[0],yy + para[1],xx,yy);
-                }
-                else if((xx + para[0] == 2||xx + para[0]==8)&&(yy + para[1] == 2||yy + para[1]==8)){
-                    ChessValue =ChessValue+ 3*GetEffectValue(xx + para[0],yy + para[1],xx,yy);
-                }
-                else if((xx + para[0] == 2||xx + para[0]==8)&&(yy + para[1] == 1||yy + para[1]==9)){
-                    ChessValue =ChessValue+ 3.5*GetEffectValue(xx + para[0],yy + para[1],xx,yy);
-                }
-                else {
-                    ChessValue = ChessValue + GetEffectValue(xx + para[0],yy + para[1],xx,yy);
+                if ((xx + para[0] == 1 || xx + para[0] == 9) && (yy + para[1] == 1 || yy + para[1] == 9)) {
+                    ChessValue = ChessValue + 4 * GetEffectValue(xx + para[0], yy + para[1], xx, yy);
+                } else if ((xx + para[0] == 1 || xx + para[0] == 9) && (yy + para[1] == 2 || yy + para[1] == 8)) {
+                    ChessValue = ChessValue + 3.5 * GetEffectValue(xx + para[0], yy + para[1], xx, yy);
+                } else if ((xx + para[0] == 2 || xx + para[0] == 8) && (yy + para[1] == 2 || yy + para[1] == 8)) {
+                    ChessValue = ChessValue + 3 * GetEffectValue(xx + para[0], yy + para[1], xx, yy);
+                } else if ((xx + para[0] == 2 || xx + para[0] == 8) && (yy + para[1] == 1 || yy + para[1] == 9)) {
+                    ChessValue = ChessValue + 3.5 * GetEffectValue(xx + para[0], yy + para[1], xx, yy);
+                } else {
+                    ChessValue = ChessValue + GetEffectValue(xx + para[0], yy + para[1], xx, yy);
                 }
             }
         }
@@ -265,24 +250,19 @@ public class Value {
     }*/
 
 
-    private double GetEffectValue(int xx,int yy,int x,int y){
-        double distance = Math.sqrt((xx-x)*(xx-x)+(yy-y)*(yy-y));
-        if(distance == 1){
+    private double GetEffectValue(int xx, int yy, int x, int y) {
+        double distance = Math.sqrt((xx - x) * (xx - x) + (yy - y) * (yy - y));
+        if (distance == 1) {
             return 21;
-        }
-        else if(distance == Math.sqrt(2)){
+        } else if (distance == Math.sqrt(2)) {
             return 15;
-        }
-        else if(distance == 2){
+        } else if (distance == 2) {
             return 8;
-        }
-        else if(distance == Math.sqrt(5)){
+        } else if (distance == Math.sqrt(5)) {
             return 5;
-        }
-        else if(distance == Math.sqrt(8)){
+        } else if (distance == Math.sqrt(8)) {
             return 2;
-        }
-        else if(distance == 3){
+        } else if (distance == 3) {
             return 3;
         }
         /*
@@ -302,4 +282,6 @@ public class Value {
         else
             return 0;
     }
+
+
 }
