@@ -75,7 +75,7 @@ public class InformationSet {
         }
 
         int need = GameStart.count - knownOpponentChessCount;
-        if (GameStart.count < 16) {
+        if (GameStart.count < 21) {
             history.flag = false;
         }
 
